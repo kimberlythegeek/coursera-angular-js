@@ -14,7 +14,11 @@
       else {
         var itemList = separateItems($scope.lunchItems);
         for(var i=0; i<itemList.length; i++){
-          console.log(itemList[i]);
+          // Check if Item is empty or contains only whitespace
+          if ( itemList[i] == '' || /^\s*$/.test(itemList[i]) ) {
+            itemList.splice(i,1); //remove blank item
+            i--;                  //lower loop iterator so next item is not skipped
+          }
         }
         $scope.feedback = itemList.length < 4 ? 'Enjoy!' : 'Too Much Food!';
       }
