@@ -20,7 +20,11 @@
             i--;                  //lower loop iterator so next item is not skipped
           }
         }
-        $scope.feedback = itemList.length < 4 ? 'Enjoy!' : 'Too Much Food!';
+        if ( itemList.length < 4 ) {
+          $scope.feedback = '<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Enjoy!</strong></div>';
+        } else {
+          $scope.feedback = '<div class="alert alert-success fade in"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Too Much Food!</strong></div>';
+        }
       }
 
     }
