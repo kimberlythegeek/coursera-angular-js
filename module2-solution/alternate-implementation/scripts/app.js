@@ -1,7 +1,32 @@
 (function(){
     'use strict';
 
-    var buyList = [];
+    var buyList = [
+    {
+        name: "Sriracha Sauce",
+        quantity: 1
+    },
+    {
+        name: "Beef, 1 lb.",
+        quantity: 3
+    },
+    {
+        name: "Soy Sauce",
+        quantity: 300
+    },
+    {
+        name: "Ginger",
+        quantity: 1
+    },
+    {
+        name: "Gochujang, 16 oz.",
+        quantity: 2
+    },
+    {
+        name: "Kimchi, 32 oz.",
+        quantity: 2000
+    }
+    ];
 
     var boughtList = [];
 
