@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/app.js"></script>
+    </head>
+
+    <body ng-app="ShoppingList">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="text-center">Shopping List</h1>
+
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3 col-sm-12">
+                        <input type="text" ng-model="search" placeholder="Search" class="form-control input-sm" />
+                    </div>
+                </div><!-- row -->
+
+                <div class="row">
+
+
+                    <div id="buy" ng-controller="ToBuyController as toBuyList" class="col-md-3 col-md-offset-3 col-sm-6 to-buy-items">
+                        <h3 class="text-center">To Buy</h3>
+                        <ul class="list-unstyled">
+
+                            <li ng-repeat="item in toBuyList.toBuyItems | filter : search" class="well well-sm">
+                                <input ng-click="toBuyList.buyItem($index);" type="checkbox" />
+                                {{ item.quantity}} x {{ item.name }}
+                                <button ng-click="toBuyList.removeItem($index);" class="btn btn-danger btn-xs">X</button>
+                            </li>
+                        </ul>
+                        <div ng-if="!toBuyList.toBuyItems.length" class="message text-center">
+                            All items bought!
+                        </div>
+
+                        <div id="add">
+                            <input type="text" ng-model="toBuyList.itemName" placeholder="Item Name" class="form-control input-sm"/>
+                            x <input type="number" ng-model="toBuyList.itemQuantity" placeholder="#" min="1" max="99" class="form-control input-sm"/>
+                            <button ng-click="toBuyList.addItem();" class="btn btn-primary btn-sm">Add</button>
+                        </div>
+
+                    </div> <!-- ToBuyController -->
+
+                    <div id="bought" ng-controller="AlreadyBoughtController as boughtList" class="col-md-3 col-sm-6 bought-items">
+                        <h3 class="text-center">Bought</h3>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="item in boughtList.boughtItems | filter : search" class="well well-sm">
+                                <input ng-click="boughtList.unBuyItem($index);" type="checkbox" checked />
+                                {{ item.quantity }} x {{ item.name }}
+                            </li>
+                        </ul>
+                        <div ng-if="!boughtList.boughtItems.length" class="message text-center">
+                            No items bought yet!
+                        </div>
+                    </div><!-- AlreadyBoughtController -->
+
+                </div><!-- row -->
+
+            </div><!-- row -->
+        </div><!-- .container-fluid -->
+    </body>
+
+
+</html>

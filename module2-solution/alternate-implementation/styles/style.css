@@ -1,0 +1,23 @@
+.well {
+    margin-bottom: 5px;
+}
+input['number'] {
+    width: 40px;
+}
+.bought-items li, .message {
+    color: darkgrey;
+    font-style: italic;
+}
+.to-buy-items li .btn {
+    float: right;
+}
+.to-buy-items li, .bought-items li {
+    font-size: 12px;
+}
+
+#buy .form-control, #bought .form-control {
+    display: inline-block;
+    width:auto;
+    height: auto;
+    /*font-size: 12px;*/
+}
