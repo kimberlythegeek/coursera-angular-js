@@ -12,7 +12,7 @@ input['number'] {
     float: right;
 }
 .to-buy-items li, .bought-items li {
-    font-size: 12px;
+    /*font-size: 12px;*/
 }
 
 #buy .form-control, #bought .form-control {
