@@ -23,4 +23,8 @@ __Create a "check off" shopping list application.__
 When the user clicks on the "Bought" button, its associated item should be
 removed from the "To Buy" list and appear in the "Already Bought" list.
 
-4. 
+4. The "Already Bought" list should initially be empty and display a message `"Nothing bought yet"`. Make sure the message appears only when the list is empty.
+
+5. Once something is "bought" and appears on this list, the format of each item in the list should be `Bought item_quantity item_name`.
+
+6. Once the user "buys" every item on the "To Buy" list, i.e., clicks on the "Bought" button for every item in the "To Buy" list, instead of the empty "To Buy" list, display the message `"Everything is bought!"`
