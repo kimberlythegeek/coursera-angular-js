@@ -30,7 +30,7 @@
                 <div id="bought" ng-controller="AlreadyBoughtController as boughtList" class="col-md-3 col-sm-6 bought-items">
                     <h3 class="text-center">Bought</h3>
                     <ul class="list-unstyled">
-                        <li ng-repeat="item in boughtList.boughtItems" class="well well-sm">{{ item.quantity }} x {{ item.name }}</li>
+                        <li ng-repeat="item in boughtList.boughtItems" class="well well-sm">Bought {{ item.quantity }} {{ item.name }}(s)</li>
                     </ul>
                     <div ng-if="!boughtList.boughtItems.length" class="message text-center">
                         No items bought yet!
