@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/app.js"></script>
+    </head>
+
+    <body ng-app="NarrowItDownApp">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div ng-controller="NarrowItDownController as narrow" class="col-lg-10 col-lg-offset-1 col-md-12">
+                    <form class="form-inline">
+                        <input type="text" class="form-control search-box" ng-model="searchTerm" placeholder="Search"/>
+                        <button class="btn btn-primary" ng-click="narrow.logMenuItems(searchTerm)">Narrow It Down For Me!</button>
+                    </form>
+
+                    <found-items></found-items>
+
+                </div>
+
+            </div><!-- row -->
+        </div><!-- .container-fluid -->
+    </body>
+
+
+</html>

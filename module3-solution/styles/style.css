@@ -1,0 +1,9 @@
+.search-box {
+    min-width: 50%;
+}
+.item-name {
+    font-weight: bold;
+}
+.item-description {
+    font-style: italic;
+}
