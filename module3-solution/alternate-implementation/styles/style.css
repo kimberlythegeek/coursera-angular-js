@@ -1,16 +1,8 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-h1 {
-    font-family: 'Rock Salt',cursive;
-    font-size: 8rem;
-}
 .search-box {
     min-width: 50%;
 }
 thead {
     font-weight: bold;
-    font-size: 1.6rem;
 }
 .item.item-name {
     font-weight: bold;
@@ -32,9 +24,4 @@ thead {
 }
 .results-table {
     margin-top: 4rem;
-}
-@media screen and (max-width:720px){
-    h1 {
-        font-size: 4rem;
-    }
 }
