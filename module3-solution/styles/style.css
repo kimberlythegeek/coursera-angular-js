@@ -5,8 +5,12 @@ h1 {
     font-family: 'Rock Salt',cursive;
     font-size: 8rem;
 }
-.search-box {
-    min-width: 50%;
+.form-inline .input-group {
+    display: inline-flex;
+}
+.form-inline .input-group>.form-control.search-box{
+    width: 500px;
+    max-width: 95%;
 }
 thead {
     font-weight: bold;
