@@ -21,14 +21,32 @@
         var narrow = this;
 
         narrow.logMenuItems = function (searchTerm) {
-            var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
-            promise.then(function (response) {
-                narrow.found = response;
-                console.log(response);
-            }, function (error) {
-                console.log('An error has occurred.');
-            });
+            narrow.error = "";
+            narrow.found = [];
+            // If searchTerm is not set, return an empty array instead of all menu items
+            if (searchTerm === '' || searchTerm === undefined) {
+                narrow.error = "Your search return no results.";
+            }
+            else {
+                var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+
+                promise.then(function (response) {
+                    // If no results found, or searchTerm was empty, display error
+                    if (response.length < 1) {
+                        narrow.error = "Your search return no results.";
+                    }
+                    // Else, set found to array of found items
+                    else narrow.found = response;
+
+                }, function (error) {
+                    console.log('An error has occurred.');
+                });
+            }
         }
+
+        narrow.removeItem = function (index) {
+            narrow.found.splice(index,1);
+        };
     }
 
     MenuSearchService.$inject = ['$http', 'ApiBasePath'];
@@ -40,6 +58,7 @@
             return $http({url: ApiBasePath}).then (function (result) {
                 // Process If API call Successful
                 var menu = result.data.menu_items;
+                // Filter menu_items array with those matching searchTerm
                 return menu.filter(function(item) {
                     var name = item.name.toLowerCase();
                     return name.indexOf(searchTerm) >= 0;

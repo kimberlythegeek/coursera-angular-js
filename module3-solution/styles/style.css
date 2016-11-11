@@ -1,9 +1,27 @@
 .search-box {
     min-width: 50%;
 }
-.item-name {
+thead {
     font-weight: bold;
 }
-.item-description {
+.item.item-name {
+    font-weight: bold;
+}
+.item.item-description {
     font-style: italic;
+}
+.item-price {
+    text-align: center;
+}
+.search-form {
+    margin-top: 4rem;
+    text-align: center;
+}
+.error {
+    max-width: 300px;
+    margin: 2rem auto;
+    text-align: center;
+}
+.results-table {
+    margin-top: 4rem;
 }

@@ -1,10 +1,34 @@
-<table class="table table-hover table-striped">
-    <tr ng-repeat="item in narrow.found" class="row">
-        <td class="item-name col-lg-3 col-md-4 col-sm-4 col-xs-4">
-            {{ item.name }}
-        </td>
-        <td class="item-description col-lg-9 col-md-8 col-sm-8 col-xs-8">
-            {{ item.description }}
-        </td>
-    </tr>
+<div ng-if="narrow.error" class="error text-center alert alert-danger">
+    {{ narrow.error }}
+</div>
+<table class="results-table table table-hover table-striped table-responsive row">
+    <thead ng-if="(narrow.error === '')">
+        <tr>
+            <th class="item-name col-lg-3 col-md-4 col-sm-4 col-xs-4">Item Name</th>
+            <th class="item-description col-lg-4 col-md-5 col-sm-5 col-xs-5">Description</th>
+            <th class="item-price col-lg-2 col-md-1 col-sm-1 col-xs-1">Large</th>
+            <th class="item-price col-lg-2 col-md-1 col-sm-1 col-xs-1">Small</th>
+            <th class="item-remove col-lg-1 col-md-1 col-sm-1 col-xs-1"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in narrow.found">
+            <td class="item item-name">
+                {{ item.name }}
+            </td>
+            <td class="item item-description">
+                {{ item.description }}
+            </td>
+            <td class="item item-price">
+                {{ item.price_small | currency: "$" : 2 }}
+            </td>
+            <td class="item item-price">
+                {{ item.price_large | currency: "$" : 2 }}
+            </td>
+            <td class="remove">
+                <button class="btn btn-danger btn-xs" ng-click="narrow.removeItem($index)">X</button>
+            </td>
+        </tr>
+    </tbody>
 </table>
