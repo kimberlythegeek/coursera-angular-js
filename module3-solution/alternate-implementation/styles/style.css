@@ -1,8 +1,20 @@
-.search-box {
-    min-width: 50%;
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-family: 'Rock Salt',cursive;
+    font-size: 8rem;
+}
+.form-inline .input-group {
+    display: inline-flex;
+}
+.form-inline .input-group>.form-control.search-box{
+    width: 500px;
+    max-width: 95%;
 }
 thead {
     font-weight: bold;
+    font-size: 1.6rem;
 }
 .item.item-name {
     font-weight: bold;
@@ -24,4 +36,9 @@ thead {
 }
 .results-table {
     margin-top: 4rem;
+}
+@media screen and (max-width:720px){
+    h1 {
+        font-size: 4rem;
+    }
 }

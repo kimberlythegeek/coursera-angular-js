@@ -2,20 +2,27 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rock+Salt" rel="stylesheet">
         <link rel="stylesheet" href="styles/bootstrap.min.css">
         <link rel="stylesheet" href="styles/style.css">
         <script src="scripts/angular.min.js"></script>
+        <script src="https://use.fontawesome.com/e1862a0f00.js"></script>
         <script src="scripts/app.js"></script>
     </head>
 
     <body ng-app="NarrowItDownApp">
         <div class="container-fluid">
             <div class="row">
+                <div class="text-center">
+                    <h1>David's Restaurant</h1>
+                </div>
 
-                <div ng-controller="NarrowItDownController as narrow" class="col-lg-10 col-lg-offset-1 col-md-12 col-xs-12">
+                <div ng-controller="NarrowItDownController as narrow" class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                     <form class="form-inline search-form">
-
-                        <input type="text" class="form-control search-box" ng-model="searchTerm" placeholder="Search"/>
+                        <div class="input-group">
+                            <span id="cutlery-icon" class="input-group-addon fa fa-cutlery" aria-hidden="true"></span>
+                            <input type="text" class="form-control search-box" ng-model="searchTerm" aria-label="Search Our Menu!" aria-describedby="cutlery-icon"/>
+                        </div>
                         <button class="btn btn-primary" ng-click="narrow.logMenuItems(searchTerm)">Narrow It Down For Me!</button>
                     </form>
 

@@ -6,7 +6,7 @@
     .controller('NarrowItDownController', NarrowItDownController)
     .directive('foundItems', foundItems)
     .service('MenuSearchService', MenuSearchService)
-    .constant('ApiBasePath', "http://davids-restaurant.herokuapp.com/menu_items.json");
+    .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com/menu_items.json");
 
     // foundItems.$inject = ['NarrowItDownController'];
     function foundItems () {
@@ -36,7 +36,11 @@
                         narrow.error = "Your search return no results.";
                     }
                     // Else, set found to array of found items
-                    else narrow.found = response;
+                    else narrow.found = response.sort(function(a, b){
+                        if(a.name < b.name) return -1;
+                        if(a.name > b.name) return 1;
+                        return 0;
+                    });
 
                 }, function (error) {
                     console.log('An error has occurred.');
