@@ -3,7 +3,9 @@
 
 [Complete Assignment Instructions](https://github.com/jhu-ep-coursera/fullstack-course5/blob/master/assignments/assignment3/Assignment-3.md)
 
-[]()
+[Module 3 Solution](https://kimberlythegeek.github.io/coursera-angular-js/module3-solution/)
+
+[Alternate Implementation](https://kimberlythegeek.github.io/coursera-angular-js/module3-solution/alternate-implementation)
 
 
 __You are going to be building a much simplified search of the menu item descriptions using the restaurant server REST API we used in Lecture 25, Part 2.__
