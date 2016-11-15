@@ -21,7 +21,7 @@
                     <form class="form-inline search-form">
                         <div class="input-group">
                             <span id="cutlery-icon" class="input-group-addon fa fa-cutlery" aria-hidden="true"></span>
-                            <input type="text" class="form-control search-box" ng-model="searchTerm" aria-label="Search Our Menu!" aria-describedby="cutlery-icon"/>
+                            <input type="text" class="form-control search-box" ng-model="searchTerm" ng-keyup="narrow.logMenuItems(searchTerm)" aria-label="Search Our Menu!" aria-describedby="cutlery-icon"/>
                         </div>
                         <button class="btn btn-primary" ng-click="narrow.logMenuItems(searchTerm)">Narrow It Down For Me!</button>
                     </form>
